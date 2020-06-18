@@ -1,3 +1,13 @@
+import gql from 'graphql-tag';
+
+export const GET_USERS = gql`
+  query getUsers {
+    users @rest(type: "Users", path: "users?page=2") {
+      data
+    }
+}
+`
+
 export const getUsers = () =>
   fetch('https://reqres.in/api/users?page=2')
     .then(res => res.json())

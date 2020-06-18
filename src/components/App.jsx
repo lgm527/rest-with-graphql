@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getUsers, addUser, editUser, removeUser } from './utils';
-import UsersList from './components/UsersList.jsx';
-import CreateUser from './components/CreateUser.jsx';
-import './styles.css';
+import { getUsers, addUser, editUser, removeUser } from '../utils';
+import UsersList from 'UsersList.jsx';
+import CreateUser from 'CreateUser.jsx';
+import '../styles.css';
 
 const StyledEmoji = styled.span`
   filter: hue-rotate(90deg);
