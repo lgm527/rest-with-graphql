@@ -9,14 +9,6 @@ const StyledEmoji = styled.span`
   filter: hue-rotate(90deg);
 `
 export default class App extends React.Component {
-  state = {
-    users: []
-  }
-
-  async componentDidMount() {
-    const users = await getUsers()
-    this.setState({ users })
-  }
 
   addUser = async () => {
     const newUser = await addUser()
@@ -63,15 +55,12 @@ export default class App extends React.Component {
           <StyledEmoji
             role="img"
             aria-label="moon emoji for Spacehereos."
-          >
+          > <span role="img" aria-label="moon emoji.">
             🌕
+            </span>
           </StyledEmoji>
         </p>
-        <UsersList
-          users={this.state.users}
-          editUser={this.editUser}
-          removeUser={this.removeUser}
-        />
+        <UsersList />
         <CreateUser onClick={() => this.addUser()} />
       </div>
     )
