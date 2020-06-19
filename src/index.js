@@ -12,8 +12,14 @@ const restLink = new RestLink({
 
 const client = new ApolloClient({
   link: restLink,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache()
 });
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const ApolloApp = () => (
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+);
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<ApolloApp />, rootElement);
