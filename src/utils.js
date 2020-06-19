@@ -20,6 +20,19 @@ export const ADD_USER = gql`
   }
 `
 
+export const REMOVE_USER = gql`
+  mutation removeUser($input: userId!) {
+    removeUser(input: $userId)
+      @rest(
+        type: "User"
+        path: "users/{args.userId}"
+        method: "DELETE"
+      ) {
+      userId
+    }
+  }
+`
+
 export const getUsers = () =>
   fetch('https://reqres.in/api/users?page=2')
     .then(res => res.json())

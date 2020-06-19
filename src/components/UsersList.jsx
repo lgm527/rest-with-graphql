@@ -17,6 +17,7 @@ const List = ({ users, editUser, removeUser }) => (
         firstName={user.first_name}
         lastName={user.last_name}
         avatar={user.avatar}
+        id={user.id}
         edit={() => editUser(user)}
         remove={() => removeUser(user.id)}
       />
