@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { addUser, editUser, removeUser } from '../utils';
+import { ADD_USER, EDIT_USER, REMOVE_USER } from '../utils';
 import UsersList from './UsersList.jsx';
 import CreateUser from './CreateUser.jsx';
 import '../styles.css';
@@ -9,17 +9,16 @@ const StyledEmoji = styled.span`
   filter: hue-rotate(90deg);
 `
 export default class App extends React.Component {
-
   addUser = async () => {
-    await addUser()
+    ADD_USER()
   }
 
   editUser = async user => {
-    await editUser(user)
+    EDIT_USER(user)
   }
 
   removeUser = async id => {
-    const userIsRemoved = await removeUser(id)
+    REMOVE_USER(id)
   }
 
   render() {
