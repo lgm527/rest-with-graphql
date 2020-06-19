@@ -4,10 +4,9 @@ import { ADD_USER, GET_USERS } from '../utils';
 
 const CreateUser = ({ onClick }) => {
   const newUser = {
-    first_name: 'Ken',
-    last_name: 'Wheeler',
-    avatar:
-      'https://i1.sndcdn.com/avatars-000068789647-lzbpw2-t200x200.jpg'
+    first_name: 'Laurell',
+    last_name: 'Mc',
+    avatar: 'https://bulma.io/images/placeholders/128x128.png'
   }
   return (
     <Mutation

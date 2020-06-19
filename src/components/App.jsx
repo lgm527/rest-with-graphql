@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getUsers, addUser, editUser, removeUser } from '../utils';
+import { addUser, editUser, removeUser } from '../utils';
 import UsersList from './UsersList.jsx';
 import CreateUser from './CreateUser.jsx';
 import '../styles.css';
