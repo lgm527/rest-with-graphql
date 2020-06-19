@@ -8,6 +8,18 @@ export const GET_USERS = gql`
 }
 `
 
+export const ADD_USER = gql`
+  mutation addUser($input: newUser!) {
+    addUser(input: $newUser)
+      @rest(type: "User", path: "users", method: "POST") {
+      first_name
+      last_name
+      avatar
+      id
+    }
+  }
+`
+
 export const getUsers = () =>
   fetch('https://reqres.in/api/users?page=2')
     .then(res => res.json())
