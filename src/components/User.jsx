@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import RemoveUser from './RemoveUser.jsx';
-//import EditUser from './EditUser.jsx';
+import EditUser from './EditUser.jsx';
 
 const Container = styled.div`
   display: flex;
@@ -31,6 +31,7 @@ const Avatar = styled.img`
   box-shadow: 0px 0px 0px 3px rgba(65, 208, 201, 0.75);
   margin-right: 0.75rem;
 `;
+
 const User = ({ firstName, lastName, avatar, id, remove, edit }) => (
   <Container>
     <Avatar
@@ -41,7 +42,7 @@ const User = ({ firstName, lastName, avatar, id, remove, edit }) => (
       <h4>
         {firstName} {lastName}
       </h4>
-      <span onClick={edit}>Edit</span>
+      <EditUser userId={id} />
       <RemoveUser userId={id} />
     </div>
   </Container>

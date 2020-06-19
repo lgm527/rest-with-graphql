@@ -33,6 +33,22 @@ export const REMOVE_USER = gql`
   }
 `
 
+export const EDIT_USER = gql`
+  mutation editUser($input: updatedUser!) {
+    editUser(input: $updatedUser)
+      @rest(
+        type: "User"
+        path: "users/{args.updatedUser.id}"
+        method: "PUT"
+      ) {
+      first_name
+      last_name
+      avatar
+      id
+    }
+ }
+`
+
 export const getUsers = () =>
   fetch('https://reqres.in/api/users?page=2')
     .then(res => res.json())
