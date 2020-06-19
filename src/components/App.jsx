@@ -11,34 +11,15 @@ const StyledEmoji = styled.span`
 export default class App extends React.Component {
 
   addUser = async () => {
-    const newUser = await addUser()
-    let newUserList = [...this.state.users]
-    newUserList.push(newUser)
-    this.setState({
-      users: newUserList
-    })
+    await addUser()
   }
 
   editUser = async user => {
-    const editedUser = await editUser(user)
-    let updatedUserList = this.state.users.map(user =>
-      user.id === editedUser.id ? editedUser : user
-    )
-    this.setState({
-      users: updatedUserList
-    })
+    await editUser(user)
   }
 
   removeUser = async id => {
     const userIsRemoved = await removeUser(id)
-    if (userIsRemoved) {
-      const updatedUserList = this.state.users.filter(
-        user => user.id !== id
-      )
-      this.setState({
-        users: updatedUserList
-      })
-    }
   }
 
   render() {
